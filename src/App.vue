@@ -1,30 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+
+  <div class="layout">
+
+    <!-- Header -->
+    <Header v-if="$route.path !== '/'" />
+
+    <!-- Pages -->
+    <main class="main-content p-0 m-0">
+      <router-view />
+    </main>
+
+    <!-- Footer -->
+    <Footer v-if="$route.path !=='/'" />
+
+  </div>
+
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script setup>
+
+import Header from './components/Header/index.vue'
+import Footer from './components/footer/index.vue'
+</script>
+
+<style scoped>
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-nav {
-  padding: 30px;
+.main-content {
+  flex: 1;
+  padding: 20px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
