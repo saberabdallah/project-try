@@ -33,7 +33,10 @@ export default {
 
     function addTask(){
 
-      if(!task.value.trim()) return
+      if(task.value.trim() === '') {
+
+          return
+      }
 
       emit('add', task.value)
 

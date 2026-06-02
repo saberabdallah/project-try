@@ -67,12 +67,11 @@ export default {
 
 <style scoped>
 .page {
-  min-height: 75vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  padding: 20px;
 }
 
 .todo-card {

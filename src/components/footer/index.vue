@@ -23,7 +23,7 @@
             </li>
 
             <li>
-              <router-link to="/about">About</router-link>
+              <router-link to="/Shop">Shop</router-link>
             </li>
 
             <li>
@@ -66,10 +66,7 @@ export default {
     background-color: #1f1f1f;
     color: white;
     padding-top: 50px;
-    margin-top: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+
     width: 100%;
 }
 
