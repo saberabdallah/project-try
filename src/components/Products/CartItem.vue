@@ -44,10 +44,10 @@ defineEmits(['remove'])
 
 button {
   border: none;
-  background: crimson;
   color: white;
-  padding: 5px 10px;
+  padding: 4px 5px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 12px;
 }
 </style>
