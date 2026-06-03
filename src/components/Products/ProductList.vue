@@ -17,20 +17,14 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import ProductCard from './ProductCard.vue'
 
-export default {
-  components: {
-    ProductCard
-  },
+defineProps({
+  products: Array
+})
 
-  props: {
-    products: Array
-  },
-
-  emits: ['add-to-cart']
-}
+defineEmits(['add-to-cart'])
 </script>
 
 <style scoped>

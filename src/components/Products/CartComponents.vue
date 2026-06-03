@@ -7,6 +7,7 @@
       v-for="(item,index) in cartItems"
       :key="index"
       :item="item"
+      @remove="$emit('remove-item', index)"
     />
 
     <div class="total">
@@ -16,20 +17,23 @@
   </aside>
 </template>
 
-<script>
+<script setup>
 import CartItem from './CartItem.vue'
 
-export default {
-  name: 'CartViwe',
-  components: {
-    CartItem
+
+defineProps({
+  cartItems: {
+    type: Array,
+    required: true
   },
 
-  props: {
-    cartItems: Array,
-    total: Number
+  total: {
+    type: Number,
+    required: true
   }
-}
+})
+
+defineEmits(['remove-item'])
 </script>
 
 <style scoped>
@@ -37,7 +41,9 @@ export default {
   width: 320px;
   background: white;
   padding: 20px;
-  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.308);
+  
 }
 
 .total {

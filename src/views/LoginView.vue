@@ -67,8 +67,8 @@ export default {
     const txt_username = ref("")
     const txt_password = ref("")
 
-    const username = ref("ss")
-    const password = ref("11")
+    const username = ref("a")
+    const password = ref("1")
 
     // alert
     const message = ref("")

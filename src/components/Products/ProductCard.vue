@@ -16,7 +16,7 @@
       </div>
 
 
-      <button @click="addProduct">
+      <button class="AddItem" @click="addProduct">
         إضافة للسلة
       </button>
 
@@ -25,19 +25,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    product: Object
-  },
+<script setup>
+defineProps({
+  product: Object
+})
 
-  emits: ['add-to-cart'],
+const emit = defineEmits(['add-to-cart'])
 
-  methods: {
-    addProduct() {
-      this.$emit('add-to-cart')
-    }
-  }
+function addProduct() {
+  emit('add-to-cart')
 }
 </script>
 
@@ -61,13 +57,18 @@ img {
 }
 
 .details {
-  min-height: 110px;
+  min-height: 121px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .price {
   color: #2563eb;
   margin: 10px 0;
   font-weight: bold;
+  font-size: 17px;
 }
 
 button {
@@ -78,5 +79,10 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 8px;
+  transition: .3s;
+}
+
+.AddItem:hover {
+  background: #12337b;
 }
 </style>
