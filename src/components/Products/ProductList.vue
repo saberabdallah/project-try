@@ -27,7 +27,6 @@ defineEmits(["add-to-cart"]);
 .products {
   flex: 1;
   padding: 30px;
-  
 }
 
 .products-grid {
