@@ -1,16 +1,17 @@
 <template>
   <div class="item">
-
-    <span>{{ item.name }}</span>
-
-    <div class="actions">
-      <strong>{{ item.price }} ريال</strong>
-
-      <button @click="$emit('remove')">
-        ❌
-      </button>
+    <div>
+      <span>{{ item.name }}</span>
+      <small class="quantity">
+        الكمية : {{ item.quantity }} * {{ item.price }}</small
+      >
     </div>
 
+    <div class="actions">
+      <strong>{{ item.price * item.quantity }} </strong>
+
+      <button class="minus-pro" @click="$emit('remove')">-</button>
+    </div>
   </div>
 </template>
 
@@ -18,11 +19,11 @@
 defineProps({
   item: {
     type: Object,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-defineEmits(['remove'])
+defineEmits(["remove"]);
 </script>
 
 <style scoped>
@@ -36,18 +37,27 @@ defineEmits(['remove'])
   margin-bottom: 10px;
 }
 
+.quantity {
+  color: #555;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
 .actions {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-button {
+.minus-pro {
   border: none;
-  color: white;
+  color: rgb(237, 30, 30);
+  background-color: transparent;
   padding: 4px 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 22px;
+  font-weight: bold;
 }
 </style>
