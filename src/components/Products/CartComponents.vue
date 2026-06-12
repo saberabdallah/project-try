@@ -38,6 +38,9 @@ defineEmits(["remove-item"]);
   padding: 20px;
   border-right: 1px solid #eee;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.308);
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 150px;
 }
 
 .total {

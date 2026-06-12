@@ -1,4 +1,5 @@
 <template>
+
   <div class="item">
     <div>
       <span>{{ item.name }}</span>
@@ -13,6 +14,7 @@
       <button class="minus-pro" @click="$emit('remove')">-</button>
     </div>
   </div>
+  
 </template>
 
 <script setup>

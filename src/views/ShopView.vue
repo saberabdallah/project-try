@@ -2,7 +2,7 @@
   <div class="shop-layout">
     <ProductList :products="products" @add-to-cart="addToCart" />
 
-    <Cart :cart-items="cart" :total="total" @remove-item="removeFromCart" />
+    <CartComponents :cart-items="cart" :total="total" @remove-item="removeFromCart" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import { ref, computed } from "vue";
 
 import ProductList from "@/components/Products/ProductList.vue";
-import Cart from "@/components/Products/CartComponents.vue";
+import CartComponents from "@/components/Products/CartComponents.vue";
 
 const products = ref([
   {
@@ -19,6 +19,7 @@ const products = ref([
     price: 1200,
     image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
   },
+
   {
     id: 2,
     name: "سامسونج جالكسي S24",
@@ -196,6 +197,12 @@ const products = ref([
     name: "ميكروفون احترافي",
     price: 140,
     image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=500",
+  },
+  {
+    id: 31,
+    name: "آيفون 17 برو",
+    price: 4200,
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
   },
 ]);
 
