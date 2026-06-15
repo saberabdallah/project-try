@@ -87,7 +87,7 @@ export default {
 
         // الانتقال بعد ثانية ونصف
         setTimeout(() => {
-          router.push('/Todo')
+          router.push('/home')
         }, 1500)
 
       } else {
