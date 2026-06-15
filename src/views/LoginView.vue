@@ -50,67 +50,46 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-export default {
+// router
+const router = useRouter()
 
-  name: "LoginView",
+// state
+const txt_username = ref("")
+const txt_password = ref("")
 
-  setup() {
+const username = ref("a")
+const password = ref("1")
 
-    // router
-    const router = useRouter()
+// alert
+const message = ref("")
+const alertType = ref("")
 
-    // state
-    const txt_username = ref("")
-    const txt_password = ref("")
+// method
+const authontication = () => {
 
-    const username = ref("a")
-    const password = ref("1")
+  if (
+    txt_username.value === username.value &&
+    txt_password.value === password.value
+  ) {
 
-    // alert
-    const message = ref("")
-    const alertType = ref("")
+    message.value = "Welcome Login Successfully"
+    alertType.value = "success"
 
-    // method
-    const authontication = () => {
+    // الانتقال بعد ثانية ونصف
+    setTimeout(() => {
+      router.push('/home')
+    }, 1500)
 
-      if (
-        txt_username.value === username.value &&
-        txt_password.value === password.value
-      ) {
+  } else {
 
-        message.value = "Welcome Login Successfully"
-        alertType.value = "success"
-
-        // الانتقال بعد ثانية ونصف
-        setTimeout(() => {
-          router.push('/home')
-        }, 1500)
-
-      } else {
-
-        message.value = "Username or Password Wrong"
-        alertType.value = "error"
-        txt_username.value = ""
-        txt_password.value = ""
-
-      }
-    }
-
-    return {
-
-      txt_username,
-      txt_password,
-      authontication,
-
-      message,
-      alertType
-
-    }
-
+    message.value = "Username or Password Wrong"
+    alertType.value = "error"
+    txt_username.value = ""
+    txt_password.value = ""
   }
 }
 </script>
