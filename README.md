@@ -33,3 +33,4 @@ git branch -D  أسم البرانش
 ## delete branch from githup
 
 git push origin --delete أسم البرانش
+
