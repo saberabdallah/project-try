@@ -5,7 +5,7 @@
         <h1>Home Page</h1>
     
         <p>
-        This is the home page of our Vue.js application. You can navigate to different sections using the links in the header.
+        wellcome to home page
         </p>
     
         <div class="alert alert-info" role="alert">
