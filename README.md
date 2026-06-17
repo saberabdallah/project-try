@@ -22,3 +22,14 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+## delete branch from git 
+
+git branch -D  أسم البرانش
+
+## delete branch from githup
+
+git push origin --delete أسم البرانش
